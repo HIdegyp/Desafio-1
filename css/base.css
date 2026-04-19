@@ -1,0 +1,11 @@
+body{
+    font-family: var(--font-family);
+}
+main{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 24px;
+}       
