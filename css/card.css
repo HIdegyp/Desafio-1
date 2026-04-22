@@ -2,47 +2,48 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
-
-.card{
+.card {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
-    border-radius: 1.5rem;
-    padding: 40px 34px;
-  gap:10px;
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);;
-}
-
-.card-right{
-    display: flex;
-}
-
-.card-result{
-    flex: 1;
-     max-width: 380px;     
-  min-height: 420px;    
-  display: flex;
-  flex-direction: column;
-    justify-content: space-between;
+    width: 380px;
+    min-height: 480px;
     padding: 36px 34px;
-background: linear-gradient(
-180deg,
- hsl(252, 100%, 67%)0%,
-hsl(241, 81%, 54%)100%);
-border-radius: 15px;
-align-items: center;
+    gap: 0;
+       border-radius: 1.5rem;
 }
 
-.card-result h2{
-color: var(--light-lavender);
-font-size: 24px;
-font-weight: 700;
-margin-bottom: 8px;
+.card-result,
+.card-summary {
+    width: 380px;
+    min-height: 480px;
 }
 
-.score{
+.card-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        hsl(252, 100%, 67%) 0%,
+        hsl(241, 81%, 54%) 100%
+    );
+    align-items: center;
+}
+
+.card-result h2 {
+    color: var(--light-lavender);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.score {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,11 +53,9 @@ margin-bottom: 8px;
     border-radius: 50%;
     margin: 8px 0 14px;
     line-height: 1;
-    background: linear-gradient(
-        180deg,
-        hsla(256, 72%, 46%, 1) 0%,
-        hsla(241, 72%, 46%, 0) 100%
-    );
+    background: linear-gradient(180deg,
+            hsla(256, 72%, 46%, 1) 0%,
+            hsla(241, 72%, 46%, 0) 100%);
 }
 
 .score strong {
@@ -72,19 +71,94 @@ margin-bottom: 8px;
     font-weight: 700;
 }
 
-.result-title{
-color: var(--white);
-font-size: 30px;
-font-weight: 700;
-margin-top: 4px;
+.result-title {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 4px;
 }
 
-.card-result p{
-max-width: 23ch;
-text-align: center;
-font-size: 16px;
-font-weight: 500;
-line-height: 1.35;
-margin: 0 auto;
-color: var(--light-lavender);
+.card-result p {
+    max-width: 25ch;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0 auto;
+    color: var(--light-lavender);
+}
+
+.card-summary {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    margin-left: -18px;
+    padding-left: 52px;
+}
+
+.card-summary ul {
+    display: flex;
+    flex-direction:column;
+    gap: 15px;
+    margin: 24px 0;
+}
+
+.card-summary li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 8px;
+}   
+ 
+.card-summary li strong{
+    color: var(--dark-gray-blue);
+    font-weight: 700;
+}
+
+.card-summary small{
+    color: var(--light-lavender);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.item-reaction {
+    color: var(--light-red);
+    background-color: hsla(0, 100%, 67%, 0.08);
+}
+.item-memory {
+    color: var(--orangey-yellow);
+    background-color: hsla(39, 100%, 56%, 0.08);
+}
+.item-verbal {
+    color: var(--green-teal);
+    background-color: hsla(166, 100%, 37%, 0.08);
+}
+.item-visual {
+    color: var(--cobalt-blue);              
+    background-color: hsla(234, 85%, 45%, 0.08);
+}
+
+.card-summary button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    margin-top: 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--dark-gray-blue);
+}
+
+.card-summary button:hover {
+    background: linear-gradient(
+        180deg,
+        hsl(252, 100%, 67%) 0%,
+        hsl(241, 81%, 54%) 100%
+    );
+    opacity: 0.8;
 }
