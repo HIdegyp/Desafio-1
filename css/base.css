@@ -1,5 +1,6 @@
 body{
     font-family: var(--font-family);
+    background-color: var(--pale-blue);
 }
 main{
     display: flex;
@@ -7,5 +8,16 @@ main{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 1.5rem;
+    padding: 1.5rem;
 }       
+
+@media (max-width: 26.875rem){
+        body{
+            background-color: var(--white);
+        }
+
+        main{
+            align-items: flex-start;
+            padding: 0;
+        }
+}
